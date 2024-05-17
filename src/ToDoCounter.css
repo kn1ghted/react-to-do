@@ -1,0 +1,8 @@
+.ToDoCounter {
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+.ToDoCounter span {
+    font-weight: bold;
+}

@@ -1,0 +1,10 @@
+/* To Do Search styles */
+input {
+    border: 2px solid blue;
+    padding: 10px;
+}
+
+input::placeholder {
+    font-family: 'Roboto', Times, serif;
+    font-weight: bold;
+}
