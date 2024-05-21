@@ -1,9 +1,22 @@
-// Styles import
+// REACT import
+import React from 'react';
+// Stylesheet import
 import './ToDoSearch.css'
 
-function ToDoSearch(){
+// Get props of parent component as arguments
+function ToDoSearch({searchValue, setSearchValue}) {
+
     return(
-      <input placeholder="Search task"></input>
+      <input 
+      className="ToDoSearch" 
+      placeholder="Search task"
+      value = {searchValue}
+      onChange={
+        (event) => {
+            setSearchValue(event.target.value)
+        }
+      }>
+      </input>
     );
 }
 

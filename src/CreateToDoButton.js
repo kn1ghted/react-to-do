@@ -3,9 +3,18 @@ import './CreateToDoButton.css';
 
 // REACT component
 function CreateToDoButton(){
-    return(
+    return (
       // Element encapsulated by component
-      <button className="createToDo">+</button>
+    <button 
+        className="createToDo"
+        onClick={
+            (event) => {
+                console.log('Add ToDo button clicked!');
+                console.log(event.target);
+            }
+        }>
+        +
+    </button>
     );
   }
 

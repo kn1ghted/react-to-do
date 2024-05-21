@@ -12,7 +12,7 @@
     font-weight:400;
 }
 
-.ToDoItem-description {
+.ToDoItem-description-completed {
     text-decoration:line-through;
 }
 
@@ -27,12 +27,12 @@
     font-weight:700;
 }
 
-.Icon-check {
+.icon-check {
     position:absolute;
     left:12px;
 }
 
-.icon-check {
+.icon-check-active {
     color:#4caf50;
 }
 
