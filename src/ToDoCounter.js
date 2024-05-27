@@ -14,9 +14,16 @@ const styles = {
 // Component recieving props parameters
 // JSX elements with JSX inline styles 
 function ToDoCounter({completed, total}){
+  if (completed === total) {
+    return(
+      <h1 className="ToDoCounter" style={styles}>All tasks completed!</h1>
+    ); 
+  } else {
     return(
       <h1 className="ToDoCounter" style={styles}><span>{completed}</span> out of <span>{total}</span> to do tasks completed</h1>
     );
+  }
+    
 }
 
 // Named export requieres to be imported with exact name, avoiding type errors

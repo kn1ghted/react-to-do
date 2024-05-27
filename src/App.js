@@ -31,6 +31,39 @@ function App() {
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
+  // STATE for search todos
+  const searchedTodos = todos.filter(
+    (todo) => {
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLocaleLowerCase();
+      return todoText.includes(searchText);
+    }
+  );
+
+  // Logic to toggle a To Do completed state
+  const toggleCompleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    if (newTodos[todoIndex].completed === true) {
+      newTodos[todoIndex].completed = false;
+    } else {
+      newTodos[todoIndex].completed = true
+    }
+    setTodos(newTodos);
+  }
+
+  // Logic to delete a To Do
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    ); 
+    newTodos.splice(todoIndex,1);
+    setTodos(newTodos);
+  }
+
   // returns HTML-like block JSX
   return (
     // JSX elements keywords as className, tag names, and some inherited from HTML
@@ -49,8 +82,16 @@ function App() {
       />
       <ToDoList>
         {/* Render elements from an array, must key unique identifier */}
-        {defaultToDos.map(todo => 
-          <ToDoItem key={todo.text} text={todo.text} completed={todo.completed}/>
+        {searchedTodos.map(todo => 
+          <ToDoItem 
+            key={todo.text} 
+            text={todo.text} 
+            completed={todo.completed}
+            // Notice arrow function to pass parameters
+            toggleComplete = {() => toggleCompleteTodo(todo.text)}
+            // Notice arrow function to pass parameters
+            onDelete = {() => deleteTodo(todo.text)}
+          />
         )}
       </ToDoList>
       <CreateToDoButton/>
