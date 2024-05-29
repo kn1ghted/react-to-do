@@ -1,3 +1,6 @@
+import { CompleteIcon } from './CompleteIcon.js';
+import { DeleteIcon } from './DeleteIcon.js';
+
 // Import stylesheet
 import './ToDoItem.css';
 
@@ -6,11 +9,16 @@ function ToDoItem(props){
     return(
       // Element encapsulated by component
       <li className="ToDoItem">
-        <span className={`icon icon-check ${props.completed && "icon-check-active"}`}
-        onClick={props.toggleComplete}>V</span>
+        <CompleteIcon
+          completed = {props.completed}
+          onToggle = {props.toggleComplete}
+        />
+        {/* <span onClick={props.toggleComplete}>V</span> */}
         <p className={`ToDoItem-description ${props.completed && "ToDoItem-description-completed"}`}>{props.text}</p>
-        <span className="icon icon-delete" 
-        onClick={props.onDelete}>x</span>
+        <DeleteIcon
+          onDelete = {props.onDelete}
+        />
+        {/* <span onClick={props.onDelete}>x</span> */}
       </li>
     );
   }
