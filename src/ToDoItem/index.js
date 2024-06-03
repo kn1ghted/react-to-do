@@ -1,5 +1,5 @@
-import { CompleteIcon } from './CompleteIcon.js';
-import { DeleteIcon } from './DeleteIcon.js';
+import { CompleteIcon } from '../ToDoIcon/CompleteIcon';
+import { DeleteIcon } from '../ToDoIcon/DeleteIcon';
 
 // Import stylesheet
 import './ToDoItem.css';

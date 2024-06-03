@@ -7,7 +7,7 @@ import './ToDoSearch.css'
 function ToDoSearch({searchValue, setSearchValue}) {
 
     return(
-      <input 
+      <input id="search"
       className="ToDoSearch" 
       placeholder="Search task"
       value = {searchValue}
