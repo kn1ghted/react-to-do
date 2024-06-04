@@ -5,6 +5,8 @@ import { ToDoItem } from '../ToDoItem';
 import { CreateToDoButton } from '../CreateToDoButton';
 
 function AppUI({
+    loading,
+    error,
     completedTodos,
     totalTodos,
     searchValue,
@@ -30,6 +32,9 @@ function AppUI({
         setSearchValue = {setSearchValue}
         />
         <ToDoList>
+        {loading ? <p>Loading...</p> : null}
+        {error ? <p>Error: loading items</p> : null}
+        {(!loading && searchedTodos.lenght === 0)? <p>Create your first To Do!</p> : null}
         {/* Render elements from an array, must key unique identifier */}
         {searchedTodos.map(todo => 
             <ToDoItem 

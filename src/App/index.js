@@ -23,7 +23,13 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('');
 
   // STATE for todo tasks
-  const [todos, saveToDos] = useLocalStorage('TODOS_V1',[]);
+  // use object to access several states, and renamed states for internal logic
+  const {
+    item : todos, 
+    saveItem : saveToDos,
+    loading,
+    error
+  } = useLocalStorage('TODOS_V1',[]);
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
@@ -63,6 +69,8 @@ function App() {
   // returns HTML-like block JSX
   return (
     < AppUI
+      loading={loading}
+      error={error}
       completedTodos={completedTodos}
       totalTodos={totalTodos}
       searchValue={searchValue}
