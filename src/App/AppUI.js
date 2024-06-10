@@ -3,6 +3,8 @@ import { ToDoSearch } from '../ToDoSearch';
 import { ToDoList } from '../ToDoList';
 import { ToDoItem } from '../ToDoItem';
 import { CreateToDoButton } from '../CreateToDoButton';
+import { ToDoLoading } from '../ToDoLoading';
+import { ToDoError } from '../ToDoError';
 
 function AppUI({
     loading,
@@ -32,8 +34,15 @@ function AppUI({
         setSearchValue = {setSearchValue}
         />
         <ToDoList>
-        {loading ? <p>Loading...</p> : null}
-        {error ? <p>Error: loading items</p> : null}
+        {loading ? 
+        <>
+            <ToDoLoading/>
+            <ToDoLoading/>
+            <ToDoLoading/>
+            <ToDoLoading/>
+        </> 
+        : null}
+        {error ? <ToDoError/> : null}
         {(!loading && searchedTodos.lenght === 0)? <p>Create your first To Do!</p> : null}
         {/* Render elements from an array, must key unique identifier */}
         {searchedTodos.map(todo => 
