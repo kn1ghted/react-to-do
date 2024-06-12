@@ -2,15 +2,15 @@
 import './CreateToDoButton.css';
 
 // REACT component
-function CreateToDoButton(){
+function CreateToDoButton({ setOpenModal }){
     return (
       // Element encapsulated by component
     <button 
         className="createToDo"
         onClick={
-            (event) => {
+            () => {
                 console.log('Add ToDo button clicked!');
-                console.log(event.target);
+                setOpenModal(state => !state);
             }
         }>
         +

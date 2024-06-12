@@ -1,22 +1,23 @@
 .createToDo {
+    align-items:center;
     background-color:#61dafa;
     box-shadow:0 5px 25px rgba(97,218,250,.5);
     border:none;
     border-radius:50%;
-    cursor:pointer;
-    font-size:50px;
-    position:fixed;
     bottom:24px;
-    right:24px;
-    font-weight:700;
     color:#fafafa;
+    cursor:pointer;
     display:flex;
-    justify-content:center;
-    align-items:center;
+    font-size:50px;
+    font-weight:700;
     height:64px;
-    width:64px;
+    justify-content:center;
+    position:fixed;
+    right:24px;
     transform:rotate(0);
-    transition:.3s ease
+    transition:.3s ease;
+    width:64px;
+    z-index: 1;
 }
 
 .createToDo:hover {

@@ -11,7 +11,7 @@ function ToDoProvider({children}){
     // Argument on useState is the initial value for the state, in this case empty string
     const [searchValue, setSearchValue] = React.useState('');
 
-    // STATE for todo tasks
+    // STATES for todo tasks
     // use object to access several states, and renamed states for internal logic
     const {
         item : todos, 
@@ -30,6 +30,9 @@ function ToDoProvider({children}){
         return todoText.includes(searchText);
         }
     );
+
+    // STATE for modal window
+    const [openModal, setOpenModal] = React.useState(false);
 
     // Logic to toggle a To Do completed state
     const toggleCompleteTodo = (text) => {
@@ -55,6 +58,16 @@ function ToDoProvider({children}){
         saveToDos(newTodos);
     }
 
+    // Logic to add a To Do
+    const addToDo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+            text,
+            completed: false,
+        });
+        saveToDos(newTodos);
+    }
+
     return (
         // VALUE contains all states that needs to be exposed to the context
         <ToDoContext.Provider value = {{
@@ -66,7 +79,10 @@ function ToDoProvider({children}){
             setSearchValue,
             searchedTodos,
             toggleCompleteTodo,
+            addToDo,
             deleteTodo,
+            openModal, 
+            setOpenModal
         }}>
             {children}
         </ToDoContext.Provider>
