@@ -2,9 +2,11 @@
 import React from 'react';
 // Stylesheet import
 import './ToDoSearch.css'
+import { ToDoContext } from '../ToDoContext';
 
-// Get props of parent component as arguments
-function ToDoSearch({searchValue, setSearchValue}) {
+// Use context to get shared props
+function ToDoSearch() {
+    const {searchValue, setSearchValue,} = React.useContext(ToDoContext);
 
     return(
       <input id="search"

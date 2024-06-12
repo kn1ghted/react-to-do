@@ -55,3 +55,12 @@ function useLocalStorage (itemName, initialValue) {
   }
 
   export { useLocalStorage };
+
+// const defaultToDos = [
+//   {text:'ToDo Task 1', completed: false},
+//   {text:'ToDo Task 2', completed: false},
+//   {text:'ToDo Task 3', completed: false},
+//   {text:'ToDo Task 4', completed: false},
+// ];
+// localStorage.setItem('TODOS_V1', defaultToDos);
+// localStorage.removeItem('TODOS_V1');
