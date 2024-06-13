@@ -62,5 +62,5 @@ function useLocalStorage (itemName, initialValue) {
 //   {text:'ToDo Task 3', completed: false},
 //   {text:'ToDo Task 4', completed: false},
 // ];
-// localStorage.setItem('TODOS_V1', defaultToDos);
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
 // localStorage.removeItem('TODOS_V1');
