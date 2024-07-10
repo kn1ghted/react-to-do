@@ -1,6 +1,7 @@
 {
-  "name": "platzi-intro-react-base",
-  "version": "0.1.0",
+  "homepage": "https://kn1ghted.github.io/react-to-do/",
+  "name": "react-to-do",
+  "version": "2.0.0",
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
@@ -29,10 +30,17 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "homepage": "https://kn1ghted.github.io/react-to-do/"
+    ]
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
-  }
+  },
+  "description": "simple todo list app",
+  "main": "index.js",
+  "keywords": [
+    "todo",
+    "list"
+  ],
+  "author": "Edwin Calderon",
+  "license": "MIT"
 }
